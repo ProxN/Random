@@ -25,7 +25,7 @@ export default createGlobalStyle`
         line-height:normal;
         font-weight:normal;
         ${({ theme }) => css`
-          background-color: ${theme.colors.primary.mid};
+          background-color: ${theme.colors.primary.dark};
           font-size: ${theme.fontSizes.regular};
           color: ${theme.colors.gray.light};
           font-family: ${theme.fonts.primary};

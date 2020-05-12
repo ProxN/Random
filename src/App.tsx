@@ -1,14 +1,13 @@
 import 'normalize.css';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from './styles/globa.style';
 import theme from './styles/theme.style';
+import Layout from './components/Layout';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      Welecom To Random App
+      <Layout>Welecom To Random App</Layout>
     </ThemeProvider>
   );
 };
