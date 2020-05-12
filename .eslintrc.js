@@ -35,5 +35,12 @@ module.exports = {
   rules: {
     'no-console': 'warn',
     'jsx-quotes': ['error', 'prefer-single'],
+    'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowExpressions: true,
+      },
+    ],
   },
 };
