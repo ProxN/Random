@@ -5,4 +5,8 @@ const LayoutContainer = styled.article`
   height: 100%;
 `;
 
+export const Wrapper = styled.main`
+  min-height: ${({ theme }) => `calc(100% - ${theme.headerHeight})`};
+`;
+
 export default LayoutContainer;

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import GlobalStyles from '../../styles/globa.style';
-import LayoutContainer from './styles';
+import LayoutContainer, { Wrapper } from './styles';
+import Header from '../Header';
 
 interface Props {
   children: ReactNode;
@@ -10,7 +11,8 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <LayoutContainer>
       <GlobalStyles />
-      {children}
+      <Header />
+      <Wrapper>{children}</Wrapper>
     </LayoutContainer>
   );
 };

@@ -14,6 +14,9 @@ declare module 'styled-components' {
         mid: string;
         light: string;
       };
+      yellow: {
+        dark: string;
+      };
     };
     fonts: {
       primary: string;
@@ -25,5 +28,6 @@ declare module 'styled-components' {
       medium: string;
       large: string;
     };
+    headerHeight: string;
   }
 }
