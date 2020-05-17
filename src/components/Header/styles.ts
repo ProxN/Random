@@ -36,7 +36,7 @@ export const LogoLink = styled.a`
   span {
     width: 10px;
     display: block;
-    background: ${({ theme }) => theme.colors.yellow.dark};
+    background: ${({ theme }) => theme.colors.secondary.dark};
     margin-right: 5px;
     height: 10px;
     border-radius: 50%;

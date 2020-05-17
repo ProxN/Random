@@ -6,7 +6,7 @@ const LayoutContainer = styled.article`
 `;
 
 export const Wrapper = styled.main`
-  min-height: ${({ theme }) => `calc(100% - ${theme.headerHeight})`};
+  height: ${({ theme }) => `calc(100% - ${theme.headerHeight})`};
 `;
 
 export default LayoutContainer;

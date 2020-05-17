@@ -8,14 +8,18 @@ declare module 'styled-components' {
         dark: string;
         mid: string;
         light: string;
+        light2: string;
+        light3: string;
+      };
+      secondary: {
+        dark: string;
+        mid: string;
+        light: string;
       };
       gray: {
         dark: string;
         mid: string;
         light: string;
-      };
-      yellow: {
-        dark: string;
       };
     };
     fonts: {
