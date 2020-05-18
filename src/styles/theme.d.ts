@@ -31,6 +31,8 @@ declare module 'styled-components' {
       regular: string;
       medium: string;
       large: string;
+      h1: string;
+      h2: string;
     };
     headerHeight: string;
   }

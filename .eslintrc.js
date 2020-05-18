@@ -31,7 +31,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'jest', 'react', 'prettier'],
+  plugins: ['@typescript-eslint', 'jest', 'react', 'react-hooks', 'prettier'],
   rules: {
     'no-console': 'warn',
     'jsx-quotes': ['error', 'prefer-single'],

@@ -28,7 +28,9 @@ const Theme: DefaultTheme = {
     small: '14px',
     regular: '16px',
     medium: '20px',
-    large: '40px',
+    large: '24px',
+    h1: '50px',
+    h2: '28px',
   },
   headerHeight: '100px',
 };

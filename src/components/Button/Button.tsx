@@ -2,7 +2,7 @@ import React from 'react';
 import StyledButton from './styles';
 
 interface Props {
-  children: string;
+  children: React.ReactNode;
 }
 
 const Button: React.FC<Props> = ({ children }) => {

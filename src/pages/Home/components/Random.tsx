@@ -12,6 +12,7 @@ const Random: React.FC = () => {
       const { target } = e;
       setListType(target.value);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [listType]
   );
 

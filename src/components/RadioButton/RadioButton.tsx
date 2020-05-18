@@ -10,7 +10,7 @@ import {
 interface Props {
   value: string;
   type: string;
-  handleChange(e: React.ChangeEvent): unknown;
+  handleChange?(e: React.ChangeEvent): unknown;
 }
 
 const RadioButton: React.FC<Props> = ({ handleChange, value, type }) => {

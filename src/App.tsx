@@ -10,6 +10,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme.style';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import List from './pages/List';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,8 @@ const App: React.FC = () => {
         <Layout>
           <Switch>
             <Route path='/' component={Home} exact />
+            <Route path='/random/:name' component={List} exact />
+
             <Redirect to='/' />
           </Switch>
         </Layout>
