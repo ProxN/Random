@@ -11,7 +11,7 @@ const List: React.FC = () => {
 
   useEffect(() => {
     const onLoad = async (): Promise<void> => {
-      const res = await Request('movies');
+      const res = await Request('animes');
       setData(res);
       setIsLoading(false);
     };

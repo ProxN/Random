@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { MOVIE_API, MOVIE_KEY } from '../constants/urls';
+import { MOVIE_API, MOVIE_KEY, ANIME_MANGA } from '../constants/urls';
 import { moviesGenre } from '../constants/config';
 import { Item } from '../interfaces/index.d';
 
-const RandomPage = (pages: number): number => {
-  return Math.floor(Math.random() * pages + 1);
+const randomNumber = (num: number): number => {
+  return Math.floor(Math.random() * num + 1);
 };
 
 const getMovies = async (): Promise<Array<Item>> => {
@@ -15,8 +15,8 @@ const getMovies = async (): Promise<Array<Item>> => {
     const res1 = await axios.get(url);
     const { total_pages: pages } = res1.data;
 
-    const res2 = await axios.get(`${url}&page=${RandomPage(pages)}`);
-    const res3 = await axios.get(`${url}&page=${RandomPage(pages)}`);
+    const res2 = await axios.get(`${url}&page=${randomNumber(pages)}`);
+    const res3 = await axios.get(`${url}&page=${randomNumber(pages)}`);
     const data = [...res2.data.results, ...res3.data.results];
 
     const convertedData = data.map(
@@ -33,11 +33,40 @@ const getMovies = async (): Promise<Array<Item>> => {
   }
 };
 
+const getAnimes = async (): Promise<Array<Item>> => {
+  try {
+    let genre = randomNumber(12);
+
+    // Check if genre is not RX
+    if (genre === 12) {
+      genre = randomNumber(12);
+    }
+    const res = await axios.get(
+      `${ANIME_MANGA}search/anime?genre=${genre}&type=tv`
+    );
+    const { results } = res.data;
+    const convertedData = results.map(
+      (el: any): Item => ({
+        id: el.mal_id,
+        title: el.title,
+        image: el.image_url,
+        year: el.start_date ? el.start_date.split('-')[0] : '####',
+      })
+    );
+    return convertedData;
+  } catch (error) {
+    return error;
+  }
+};
+
 const Request = async (type: string): Promise<Array<Item>> => {
   let results = [];
   switch (type) {
     case 'movies':
       results = await getMovies();
+      return results;
+    case 'animes':
+      results = await getAnimes();
       return results;
     default:
       return [];
