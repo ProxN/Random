@@ -1,18 +1,18 @@
 import React from 'react';
 import ListContainer from './RandomList.styles';
 import ListItem from './ListItem';
+import { Item } from '../../../interfaces/index.d';
 
-const RandomList: React.FC = () => {
+interface Props {
+  data: Array<Item>;
+}
+
+const RandomList: React.FC<Props> = ({ data }) => {
   return (
     <ListContainer>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      {data.map((el) => (
+        <ListItem item={el} />
+      ))}
     </ListContainer>
   );
 };

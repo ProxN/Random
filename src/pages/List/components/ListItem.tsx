@@ -1,20 +1,34 @@
 import React from 'react';
+import { IoMdImage } from 'react-icons/io';
+import { Item as Iitem } from '../../../interfaces/index.d';
 import {
   Item,
   ListItemImgLink,
   ListItemImg,
   ListItemTitle,
+  SvgContainer,
 } from './ListItem.styles';
 
-const ListItem: React.FC = () => {
+interface Props {
+  item: Iitem;
+}
+
+const ListItem: React.FC<Props> = ({ item }) => {
   return (
     <Item>
       <ListItemImgLink>
-        <ListItemImg src='https://image.tmdb.org/t/p/w220_and_h330_face/fi8EvaWtL5CvoielOjjVvTr7ux3.jpg' />
+        {item.image ? (
+          <ListItemImg src={item.image} />
+        ) : (
+          <SvgContainer>
+            <IoMdImage />
+          </SvgContainer>
+        )}
       </ListItemImgLink>
       <ListItemTitle>
-        The Jungle Book&nbsp;
-        <span>(2019)</span>
+        <p>{item.title}</p>
+        &nbsp;
+        <span>{`(${item.year})`}</span>
       </ListItemTitle>
     </Item>
   );

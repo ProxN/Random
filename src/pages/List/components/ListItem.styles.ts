@@ -32,6 +32,25 @@ export const ListItemTitle = styled.a`
   font-weight: 600;
   cursor: pointer;
   padding: 10px;
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+`;
+
+export const SvgContainer = styled.div`
+  max-width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${({ theme }) => theme.colors.primary.light};
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: ${({ theme }) => theme.colors.primary.dark};
+  }
 `;
