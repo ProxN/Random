@@ -11,7 +11,7 @@ const RandomList: React.FC<Props> = ({ data }) => {
   return (
     <ListContainer>
       {data.map((el) => (
-        <ListItem item={el} />
+        <ListItem key={el.id} item={el} />
       ))}
     </ListContainer>
   );
