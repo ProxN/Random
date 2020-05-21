@@ -3,6 +3,8 @@ import { MOVIE_API, MOVIE_KEY, ANIME_MANGA } from '../constants/urls';
 import { moviesGenre } from '../constants/config';
 import { Item } from '../interfaces/index.d';
 
+type MangaAnimeType = 'anime' | 'manga';
+
 const randomNumber = (num: number): number => {
   return Math.floor(Math.random() * num + 1);
 };
@@ -33,16 +35,15 @@ const getMovies = async (): Promise<Array<Item>> => {
   }
 };
 
-const getAnimes = async (): Promise<Array<Item>> => {
+const getAnimesManga = async (type: MangaAnimeType): Promise<Array<Item>> => {
   try {
-    let genre = randomNumber(12);
-
+    let genre = randomNumber(45);
     // Check if genre is not RX
     if (genre === 12) {
-      genre = randomNumber(12);
+      genre = randomNumber(45);
     }
     const res = await axios.get(
-      `${ANIME_MANGA}search/anime?genre=${genre}&type=tv`
+      `${ANIME_MANGA}search/${type}?genre=${genre}&type=tv`
     );
     const { results } = res.data;
     const convertedData = results.map(
@@ -66,7 +67,10 @@ const Request = async (type: string): Promise<Array<Item>> => {
       results = await getMovies();
       return results;
     case 'animes':
-      results = await getAnimes();
+      results = await getAnimesManga('anime');
+      return results;
+    case 'manga':
+      results = await getAnimesManga(type);
       return results;
     default:
       return [];

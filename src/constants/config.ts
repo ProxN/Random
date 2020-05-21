@@ -1,4 +1,4 @@
-export const types = ['movies', 'animes', 'books', 'songs', 'albums', 'manga'];
+export const types = ['movies', 'animes', 'manga'];
 export const moviesGenre = [
   '28',
   '12',

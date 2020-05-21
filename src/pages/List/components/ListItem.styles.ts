@@ -18,7 +18,7 @@ export const ListItemImgLink = styled.div`
 
 export const ListItemImg = styled.img`
   max-width: 100%;
-  height: auto;
+  height: 250px;
 `;
 
 export const ListItemTitle = styled.a`
