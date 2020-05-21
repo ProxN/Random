@@ -25,7 +25,7 @@ const List: React.FC = () => {
     <ListSection>
       <Heading>
         Random
-        <span> Movies.</span>
+        <span> {name}.</span>
       </Heading>
       <RandomList data={data} />
     </ListSection>

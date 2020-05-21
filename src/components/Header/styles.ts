@@ -11,6 +11,9 @@ export const Navbar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 37.5em) {
+    padding: 0 25px;
+  }
 `;
 
 const Animation = keyframes`
